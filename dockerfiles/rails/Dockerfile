@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     libpq-dev \
     locales \
-    mysql-client \
+    mariadb-client \
     autoconf libpng-dev libtool make nasm pkg-config \
     vim
 

@@ -7,13 +7,13 @@ services:
       dockerfile: dockerfiles/rails/Dockerfile
     container_name: "todoct-app"
     ports:
-      - "3008:3001"
+      - "3008:3003"
     volumes:
       - "./:/app"
     environment:
       TODOCT_DATABASE_USER: root
-      TODOCT_POCKE_DATABASE_PASSWORD: root
-      TODOCT_POCKE_DATABASE_HOST: mysql
+      TODOCT_DATABASE_PASSWORD: root
+      TODOCT_DATABASE_HOST: mysql
       EDITOR: vim
     tty: true
     stdin_open: true
