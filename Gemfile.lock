@@ -56,12 +56,20 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
+    better_errors (2.5.1)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.0.1)
+    coderay (1.1.2)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
+    debug_inspector (0.0.3)
     erubi (1.9.0)
     ffi (1.11.3)
     globalid (0.4.2)
@@ -136,6 +144,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    tapp (1.5.1)
+      thor
     thor (1.0.1)
     thread_safe (0.3.6)
     tzinfo (1.2.6)
@@ -149,6 +159,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
+  binding_of_caller
   bootsnap (>= 1.4.2)
   byebug
   listen (>= 3.0.5, < 3.2)
@@ -157,6 +169,7 @@ DEPENDENCIES
   rails (~> 6.0.2, >= 6.0.2.1)
   spring
   spring-watcher-listen (~> 2.0.0)
+  tapp
   tzinfo-data
 
 RUBY VERSION

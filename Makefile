@@ -4,6 +4,11 @@
 help: ## make taskの説明を表示する
 	@grep -E '^[0-9a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+.PHONY: bundle
+bundle: ## rails s を実行
+	docker-compose up -d
+	docker-compose exec app bundle install
+
 .PHONY: dev
 dev: ## rails s を実行
 	docker-compose up -d
