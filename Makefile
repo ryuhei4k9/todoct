@@ -7,18 +7,18 @@ help: ## make taskの説明を表示する
 .PHONY: dev
 dev: ## rails s を実行
 	docker-compose up -d
-	docker-compose exec -T app rails db:migrate
-	docker-compose exec app rails s
+	docker-compose exec app bundle exec rails db:migrate
+	docker-compose exec app bundle exec rails s
 
 .PHONY: console
 console:
 	docker-compose up -d
-	docker-compose exec app rails c
+	docker-compose exec app bundle exec rails c
 
 .PHONY: dbconsole
 dbconsole:
 	docker-compose up -d
-	docker-compose exec app rails db
+	docker-compose exec app bundle exec rails db
 
 .PHONY: docker-bash
 docker-bash: ## appコンテナにログインする
@@ -26,12 +26,12 @@ docker-bash: ## appコンテナにログインする
 
 .PHONY: rspec
 rspec: ## RSpecを実行する
-	docker-compose exec -T app rails db:migrate RAILS_ENV=test
-	docker-compose exec -T app rspec
+	docker-compose exec -T app bundle exec rails db:migrate RAILS_ENV=test
+	docker-compose exec -T app bundle exec rspec
 
 .PHONY: rails-routes
 rails-routes: ## rails routesを表示する
-	docker-compose exec app rails routes
+	docker-compose exec app bundle exec rails routes
 
 .PHONY: credencial-edit
 credencial-edit: ## config/credentials.yml.encにデータを書き込む
