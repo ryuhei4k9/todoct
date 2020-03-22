@@ -51,4 +51,4 @@ test:
 #
 production:
   <<: *default
-  database: pocke_production
+  database: todoct_production
